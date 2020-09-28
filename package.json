@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "node ./node_modules/octopus/scripts/run",
+    "prebuild": "node ./node_modules/octopus/scripts/run prebuild",
+    "build": "node ./bin/build.js",
+    "postbuild": "node ./node_modules/octopus/scripts/run postbuild",
+    "update": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Axiologic/leaflet-ssapp/issues"
   },
-  "homepage": "https://github.com/Axiologic/leaflet-ssapp#readme"
+  "homepage": "https://github.com/Axiologic/leaflet-ssapp#readme",
+  "dependencies": {
+    "octopus": "git+http://github.com/privatesky/octopus.git#1.0.4"
+  }
 }

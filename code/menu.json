@@ -1,0 +1,33 @@
+{
+  "defaultMenuConfig": {
+    "icon": "fa-bars",
+    "type": "route",
+    "component": "psk-page-loader",
+    "exact": true,
+    "404": "/pages/404.html"
+  },
+  "pages": [
+    {
+      "name": "Scan",
+      "tags": "scan"
+    },
+    {
+      "name": "History"
+    },
+    {
+      "name": "Profile"
+    },
+    {
+      "name": "Drug details",
+      "indexed": false
+    },
+    {
+      "name": "Leaflet",
+      "indexed": false
+    },
+    {
+      "name": "Landing",
+      "indexed": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<psk-page title="Scan Package" navigation-title="Scan Package">
+    <psk-form controller-name="ScanController">
+        <psk-form-row>
+<!--            <psk-img src="/resources/images/scan_package.gif" width="320"></psk-img>-->
+            <psk-barcode-scanner title="Scan SGTIN" data="@data"></psk-barcode-scanner>
+        </psk-form-row>
+        <psk-form-row>
+            <psk-text-input placeholder="Insert SGTIN code" label="Package Code" value="@data"></psk-text-input>
+        </psk-form-row>
+        <psk-grid columns="1" layout="xs=[12] s=[12] m=[4] l=[3] xl=[2]">
+            <psk-button label="Display leaflet" event-name="displayLeaflet" class="auto-width"></psk-button>
+        </psk-grid>
+    </psk-form>
+</psk-page>

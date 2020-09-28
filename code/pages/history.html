@@ -1,0 +1,23 @@
+<psk-page title="History of scanned packages" navigation-title="Scan History">
+    <psk-container controller-name="HistoryController">
+        <psk-condition condition="@historyLoaded">
+            <psk-for-each slot="condition-true" data-view-model="scannedDrugs">
+                <psk-grid columns="2" layout="xs=[1,11] s=[1,11] m=[1,11] l=[1,11] xl=[1,11]" class="history-item">
+                    <div>
+                        <psk-icon icon="barcode" width="32"></psk-icon>
+                    </div>
+                    <div>
+                        <b><psk-label label="@scanDate"></psk-label></b>
+                        <psk-label label="@sgtin" onclick="this.dispatchEvent(new Event('displayleaflet'))"></psk-label>
+                    </div>
+                </psk-grid>
+                <div slot="no-data">No Packages scanned yet.</div>
+            </psk-for-each>
+            <div slot="condition-false">
+                loading...
+            </div>
+        </psk-condition>
+        <div style="min-height: 30px;"></div>
+        <psk-button label="Clear" event-name="clearHistory"></psk-button>
+    </psk-container>
+</psk-page>

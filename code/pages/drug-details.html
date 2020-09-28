@@ -1,0 +1,19 @@
+<!--<psk-ssapp seed="@leafletSeed"></psk-ssapp>-->
+
+<psk-page title="Drug Info">
+    <psk-container controller-name="DrugDetailController">
+            <psk-for-each data-view-model="chapters">
+                <psk-form-row columns="2" layout="xs=[2,8] s=[2,8] m=[2,8] xl=[2,10]">
+                    <psk-img src="@icon"></psk-img>
+                    <psk-card title="@title">
+                        <psk-label label="@details"></psk-label>
+                    </psk-card>
+                </psk-form-row>
+            </psk-for-each>
+        <psk-grid columns="3" layout="xs=[2,8,2] s=[2,8,2] m=[2,8,2] xl=[2,8,2]">
+            <div></div>
+            <psk-button view-model="view-leaflet"></psk-button>
+            <div></div>
+        </psk-grid>
+    </psk-container>
+</psk-page>
