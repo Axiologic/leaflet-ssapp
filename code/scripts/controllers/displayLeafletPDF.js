@@ -63,7 +63,7 @@ export default class displayLeafletPDF extends ContainerController {
 
         this.setModel({});
         this.fileName = "leaflet.pdf";
-        this.path = "/tmp/product";
+        this.path = "/tmp/batch/product";
         this.fileDownloader = new FileDownloader(this.path, this.fileName);
 
         this._downloadFile();
