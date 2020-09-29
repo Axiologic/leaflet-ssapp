@@ -1,12 +1,17 @@
 import ContainerController from '../../cardinal/controllers/base-controllers/ContainerController.js';
-import parse from "../../utils/parse";
+import utils from "../../utils.js";
+
+const gtinResolver = require("gtin-resolver");
 export default class ScanController extends ContainerController {
 	constructor(element, history) {
 		super(element);
-		this.setModel({data: ''});
+		this.setModel({data: '', hasCode: false});
 
+		this.model.onChange("data", () => {
+			this.model.hasCode = true;
+		});
 		this.on("displayLeaflet", (event)=>{
-			const gtinComponents = parse(this.model.data);
+			const gtinComponents = utils.parse(this.model.data);
 			const gtinSSI = gtinResolver.createGTIN_SSI("default", gtinComponents.gtin, gtinComponents.batch, gtinComponents.expiration);
 			if (typeof $$.interactions === "undefined") {
 				require('callflow').initialise();
@@ -20,7 +25,7 @@ export default class ScanController extends ContainerController {
 			}
 
 			$$.interactions
-				.startSwarmAs("test/agent/007", "messageLoader", "mountDSU", `/tmp`, gtinSSI.getIdentifier())
+				.startSwarmAs("test/agent/007", "leafletLoader", "mountDSU", `/tmp`, gtinSSI.getIdentifier())
 				.onReturn((err, res) => {
 					history.push("/view-leaflet");
 				});
