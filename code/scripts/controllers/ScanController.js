@@ -27,7 +27,7 @@ export default class ScanController extends ContainerController {
 			$$.interactions
 				.startSwarmAs("test/agent/007", "leafletLoader", "mountDSU", `/tmp`, gtinSSI.getIdentifier())
 				.onReturn((err, res) => {
-					history.push("/view-leaflet");
+					history.push("/drug-details");
 				});
 		});
 	}

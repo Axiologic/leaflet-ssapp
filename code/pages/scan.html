@@ -4,11 +4,10 @@
     </section>
 
     <psk-container controller-name="ScanController">
-<!--        <psk-condition condition="@hasCode">-->
-<!--            <psk-barcode-scanner title="Scan SGTIN" data="@data" slot="condition-false" normal-size></psk-barcode-scanner>-->
-<!--        </psk-condition>-->
-<!--        <psk-label label="@data"></psk-label>-->
-        <psk-text-input label="GTIN:" value="@data"></psk-text-input>
+
+        <psk-barcode-scanner title="Scan SGTIN" data="@data" normal-size></psk-barcode-scanner>
+
+        <psk-text-input label="SGTIN:" value="@data"></psk-text-input>
         <psk-button label="Display leaflet" event-name="displayLeaflet" class="auto-width"></psk-button>
     </psk-container>
 
