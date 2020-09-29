@@ -12,10 +12,16 @@
       "tags": "scan"
     },
     {
-      "name": "History"
+      "name": "History",
+      "tags": "history"
     },
     {
-      "name": "Profile"
+      "name": "About",
+      "tags": "about"
+    },
+    {
+      "name": "Help",
+      "tags": "help"
     },
     {
       "name": "Drug details",
@@ -24,6 +30,10 @@
     {
       "name": "Leaflet",
       "indexed": false
+    },
+    {
+      "name": "View Leaflet",
+      "indexed": true
     },
     {
       "name": "Landing",
