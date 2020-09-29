@@ -8,6 +8,9 @@
   },
   "pages": [
     {
+      "name": "Landing"
+    },
+    {
       "name": "Scan",
       "tags": "scan"
     },
@@ -33,10 +36,6 @@
     },
     {
       "name": "View Leaflet",
-      "indexed": true
-    },
-    {
-      "name": "Landing",
       "indexed": false
     }
   ]
